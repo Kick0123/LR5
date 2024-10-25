@@ -1,0 +1,50 @@
+*{
+    font-family: Durik, Arial;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #8ce8ff;
+    padding: 10px;
+}
+
+.header a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #000;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+caption {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+tbody tr:nth-child(3n+1) {
+    background-color: #f8a3a3;
+}
+
+tbody tr:nth-child(3n+2) {
+    background-color: #a7f1a7;
+}
+
+tbody tr:nth-child(3n) {
+    background-color: #b4e2f1;
+}
+

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таблица - Лабораторная работа 5</title>
+    <link rel="stylesheet" href="table.css">
+</head>
+<body>
+    <div class="header">
+        <a href="index1.html">Основная страница</a>
+        <a href="page2.html">Позиционирование элементов</a>
+        <a href="table.html">Таблица</a>
+    </div>
+
+    <h1>Таблица данных студентов</h1>
+
+        <!-- Форма для добавления новой строки -->
+        <form id="studentForm">
+            <label for="id">ID:</label>
+            <input type="number" id="id" name="id" required><br>
+    
+            <label for="fio">ФИО студента:</label>
+            <input type="text" id="fio" name="fio" required><br>
+    
+            <label for="zachetka">Номер зачётной книжки:</label>
+            <input type="text" id="zachetka" name="zachetka" required><br>
+    
+            <label for="group">Номер группы:</label>
+            <input type="text" id="group" name="group" required><br>
+    
+            <label for="gender">Пол:</label>
+            <select id="gender" name="gender" required>
+                <option value="М">М</option>
+                <option value="Ж">Ж</option>
+            </select><br>
+    
+            <label for="age">Возраст:</label>
+            <input type="number" id="age" name="age" required><br>
+    
+            <label for="forma">Форма поступления:</label>
+            <select id="forma" name="forma" required>
+                <option value="Очная">Очная</option>
+                <option value="Заочная">Заочная</option>
+                <option value="Очно-заочная">Очно-заочная</option>
+            </select><br>
+    
+            <label for="napravlenie">Направление:</label>
+            <input type="text" id="napravlenie" name="napravlenie" required><br>
+    
+            <button type="button" onclick="addStudent()">Добавить</button>
+        </form>
+
+    <table>
+        <caption>Список студентов</caption>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ФИО студента</th>
+                <th>Номер зачётной книжки</th>
+                <th>Номер группы</th>
+                <th>Пол</th>
+                <th>Возраст</th>
+                <th>Форма поступления</th>
+                <th>Направление</th>
+            </tr>
+        </thead>
+        <tbody id="studentTableBody">
+            <tr>
+                <td>1</td>
+                <td>Иванов Иван Иванович</td>
+                <td>12345</td>
+                <td>101</td>
+                <td>М</td>
+                <td>20</td>
+                <td>Очная</td>
+                <td>Информатика</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Петров Пётр Петрович</td>
+                <td>12346</td>
+                <td>102</td>
+                <td>М</td>
+                <td>21</td>
+                <td>Заочная</td>
+                <td>Математика</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Сидорова Мария Ивановна</td>
+                <td>12347</td>
+                <td>101</td>
+                <td>Ж</td>
+                <td>19</td>
+                <td>Очная</td>
+                <td>Физика</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Кузнецов Алексей Павлович</td>
+                <td>12348</td>
+                <td>103</td>
+                <td>М</td>
+                <td>22</td>
+                <td>Очная</td>
+                <td>Химия</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Новикова Елена Дмитриевна</td>
+                <td>12349</td>
+                <td>104</td>
+                <td>Ж</td>
+                <td>20</td>
+                <td>Заочная</td>
+                <td>Экономика</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Свиридова Екатерина Николаевна</td>
+                <td>12350</td>
+                <td>102</td>
+                <td>Ж</td>
+                <td>21</td>
+                <td>Очно-заочная</td>
+                <td>Социология</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Обработки добавления данных -->
+    <script>
+        function addStudent() {
+            // Получение значений
+            const id = document.getElementById('id').value;
+            const fio = document.getElementById('fio').value;
+            const zachetka = document.getElementById('zachetka').value;
+            const group = document.getElementById('group').value;
+            const gender = document.getElementById('gender').value;
+            const age = document.getElementById('age').value;
+            const forma = document.getElementById('forma').value;
+            const napravlenie = document.getElementById('napravlenie').value;
+
+            // Проверка, заполнения даннных
+            if (!id || !fio || !zachetka || !group || !gender || !age || !forma || !napravlenie) {
+                alert('Пожалуйста, заполните все поля');
+                return;
+            }
+
+            // Создание новой строки таблицы
+            const table = document.getElementById('studentTableBody');
+            const newRow = document.createElement('tr');
+
+            // Добавление данных в ячейки
+            newRow.innerHTML = `
+                <td>${id}</td>
+                <td>${fio}</td>
+                <td>${zachetka}</td>
+                <td>${group}</td>
+                <td>${gender}</td>
+                <td>${age}</td>
+                <td>${forma}</td>
+                <td>${napravlenie}</td>
+            `;
+            
+            // Вставка новой строки в таблицу
+            table.appendChild(newRow);
+
+            // Очистка формы после добавления
+            document.getElementById('studentForm').reset();
+        }
+    </script>
+</body>
+</html>

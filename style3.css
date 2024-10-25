@@ -1,0 +1,58 @@
+*{
+    font-family: Durik, Arial;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #8ce8ff;
+    padding: 10px;
+}
+
+.header a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #000;
+}
+
+/* Основные стили */
+body {
+    background-color: #f0f4f8;
+    color: #333; 
+    margin: 20px;
+}
+
+/* Изображение */
+.pic{
+    width: 20px;
+    border-radius: 10px;
+}
+.pic1 {
+    width: 500px;
+    border-radius: 10px;
+}
+
+/* Заголовки и параграфы */
+h1 {
+    font-size: 24px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 20px;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* Списки */
+ul, ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+/* Ссылки */
+a {
+    color: #1a73e8;
+    text-decoration: none;
+}
